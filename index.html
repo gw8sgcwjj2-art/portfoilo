@@ -1,293 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Full Stack Developer</title>
+  <title>Abhishek Kumar — Full-Stack Developer</title>
 
-<meta name="description"
-content="Portfolio of a Full Stack Developer skilled in Python, Django, JavaScript, HTML, CSS, SQL, REST APIs and AI/GenAI integration.">
-<link rel="stylesheet" herf=style.css">
-    <script src="script.js"></script>
-    
-    
+  <meta
+    name="description"
+    content="Portfolio of Abhishek Kumar, a Full-Stack Developer focused on JavaScript, Python, Django, REST APIs, SQL and AI."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <!-- LOADER -->
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="loader-name">ABHISHEK KUMAR</div>
+      <div class="loader-sub">Full-Stack Developer</div>
+      <div class="loader-line">
+        <span></span>
+      </div>
+    </div>
+  </div>
 
-<nav>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
+
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <nav>
     <div class="container nav-inner">
 
-        <div class="logo">
-            Portfolio<span></span>
-        </div>
+      <a href="#" class="logo">
+        ABHISHEK KUMAR
+      </a>
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#focus">Focus</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-    </div>
-</nav>
+      <div class="availability">
+        <span class="dot"></span>
+        AVAILABLE FOR OPPORTUNITIES
+      </div>
 
-
-<!-- HERO -->
-
-<header class="hero">
-
-    <div class="container hero-grid">
-
-        <div>
-
-            <div class="tag">
-                Full Stack Developer
-            </div>
-
-            <h1>
-                I build practical
-                <span>web experiences.</span>
-            </h1>
-
-            <p>
-                Full Stack Developer focused on
-                building practical web applications using Python, Django,
-                JavaScript, HTML, CSS, SQL, REST APIs and AI/GenAI.
-            </p>
-
-            <div class="buttons">
-                <a href="#skills" class="btn btn-primary">
-                    Explore My Skills
-                </a>
-
-                <a href="#contact" class="btn btn-secondary">
-                    Contact Me
-                </a>
-            </div>
-
-        </div>
-
-
-        <div class="profile-card">
-
-            <div class="avatar">
-                DEV
-            </div>
-
-            <h3>Full Stack Developer</h3>
-
-            <p>
-                Python · Django · JavaScript
-            </p>
-
-        </div>
+      <button class="menu">☰</button>
 
     </div>
+  </nav>
 
-</header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <canvas id="canvas"></canvas>
+
+      <div class="container hero-content">
+
+        <div class="eyebrow reveal">
+          FULL-STACK DEVELOPER
+        </div>
+
+        <h1 class="reveal">
+          HI, I'M
+          <br>
+          <br>
+          <span>ABHI</span>
+        </h1>
+
+        <p class="hero-description reveal">
+          I build modern web applications with clean interfaces,
+          powerful backends, databases and practical AI integrations.
+          Currently focused on Python, Django, JavaScript, REST APIs and SQL.
+        </p>
+
+        <div class="hero-buttons reveal">
+          <a href="#projects" class="btn btn-primary">
+            View My Work →
+          </a>
+
+          <a href="#contact" class="btn">
+            Let's Connect
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>BASED IN INDIA</span>
+          <span>BUILDING • LEARNING • SHIPPING</span>
+        </div>
+
+      </div>
+
+    </section>
 
 
-<!-- ABOUT -->
+    <!-- MARQUEE -->
+    <div class="marquee">
 
-<section id="about">
+      <div class="marquee-track">
 
-    <div class="container">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JAVASCRIPT</span>
+        <span>PYTHON</span>
+        <span>DJANGO</span>
+        <span>REST API</span>
+        <span>SQL</span>
+        <span>GIT</span>
+        <span>GITHUB</span>
+        <span>AI</span>
+        <span>GENERATIVE AI</span>
+
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JAVASCRIPT</span>
+        <span>PYTHON</span>
+        <span>DJANGO</span>
+        <span>REST API</span>
+        <span>SQL</span>
+        <span>GIT</span>
+        <span>GITHUB</span>
+        <span>AI</span>
+        <span>GENERATIVE AI</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+      <div class="container">
 
         <div class="section-label">
-            About
+          About Me
         </div>
-
-        <h2 class="section-title">
-            About Me
-        </h2>
 
         <div class="about-grid">
 
-            <div class="about-text">
+          <div>
 
-                <p>
-                    I am a BCA Graduate and Full Stack Developer interested
-                    in creating practical and useful web applications.
-                </p>
+            <h2 class="section-title reveal">
+              I BUILD
+              <br>
+              DIGITAL
+              <br>
+              EXPERIENCES.
+            </h2>
 
-                <p>
-                    My current development stack includes Python, Django,
-                    JavaScript, HTML, CSS, SQL and REST APIs.
-                </p>
+            <div class="about-text reveal">
 
-            </div>
+              <p>
+                I'm Abhishek Kumar, Full-Stack Developer who enjoys
+                turning ideas into functional and modern web experiences.
+              </p>
 
-            <div class="about-text">
-
-                <p>
-                    I am also exploring AI and Generative AI integration
-                    to understand how modern AI technologies can be
-                    incorporated into web applications.
-                </p>
-
-                <p>
-                    I continuously learn new technologies and improve
-                    my development skills by building practical solutions.
-                </p>
+              <p>
+                My focus is on learning and building across the full stack —
+                from responsive interfaces and JavaScript to Python, Django,
+                REST APIs, databases and AI-powered applications.
+              </p>
 
             </div>
+
+          </div>
+
+          <div class="about-number reveal">
+            13
+          </div>
 
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
 
-<!-- SKILLS -->
+    <!-- SKILLS -->
+    <section id="skills">
 
-<section id="skills">
-
-    <div class="container">
+      <div class="container">
 
         <div class="section-label">
-            Skills
+          Skills
         </div>
 
-        <h2 class="section-title">
-            My Technical Skills
+        <h2 class="section-title reveal">
+          WHAT I
+          <br>
+          WORK WITH.
         </h2>
 
         <div class="skills-grid">
 
-            <div class="skill">
-                <h3>Python</h3>
-                <p>Backend programming and application development.</p>
+          <!-- FRONTEND -->
+          <div class="skill-category reveal">
+
+            <h3>Frontend</h3>
+
+            <div class="skill-list">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Responsive Design</span>
             </div>
 
-            <div class="skill">
-                <h3>Django</h3>
-                <p>Web application development with Python.</p>
+          </div>
+
+
+          <!-- BACKEND -->
+          <div class="skill-category reveal">
+
+            <h3>Backend</h3>
+
+            <div class="skill-list">
+              <span class="skill">Python</span>
+              <span class="skill">Django</span>
+              <span class="skill">REST APIs</span>
             </div>
 
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <p>Interactive and dynamic web experiences.</p>
+          </div>
+
+
+          <!-- DATABASE -->
+          <div class="skill-category reveal">
+
+            <h3>Database</h3>
+
+            <div class="skill-list">
+              <span class="skill">SQL</span>
+              <span class="skill">PostgreSQL</span>
             </div>
 
-            <div class="skill">
-                <h3>HTML & CSS</h3>
-                <p>Responsive and structured web interfaces.</p>
+          </div>
+
+
+          <!-- TOOLS -->
+          <div class="skill-category reveal">
+
+            <h3>Tools</h3>
+
+            <div class="skill-list">
+              <span class="skill">Git</span>
+              <span class="skill">GitHub</span>
             </div>
 
-            <div class="skill">
-                <h3>SQL</h3>
-                <p>Working with relational databases and data.</p>
+          </div>
+
+
+          <!-- AI -->
+          <div class="skill-category reveal">
+
+            <h3>AI</h3>
+
+            <div class="skill-list">
+              <span class="skill">AI Integration</span>
+              <span class="skill">Generative AI</span>
+              <span class="skill">LLMs</span>
             </div>
 
-            <div class="skill">
-                <h3>REST APIs</h3>
-                <p>Building and working with web APIs.</p>
+          </div>
+
+
+          <!-- FOCUS -->
+          <div class="skill-category reveal">
+
+            <h3>Focus</h3>
+
+            <div class="skill-list">
+              <span class="skill">Full-Stack</span>
+              <span class="skill">Web Apps</span>
+              <span class="skill">APIs</span>
             </div>
 
-            <div class="skill">
-                <h3>AI / GenAI</h3>
-                <p>Exploring AI and Generative AI integration.</p>
-            </div>
-
-            <div class="skill">
-                <h3>Web Development</h3>
-                <p>Building practical full-stack web applications.</p>
-            </div>
+          </div>
 
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
 
-<!-- FOCUS -->
+    <!-- PROJECTS -->
+    <section id="projects">
 
-<section id="focus">
-
-    <div class="container">
+      <div class="container">
 
         <div class="section-label">
-            Focus
+          Selected Work
         </div>
 
-        <h2 class="section-title">
-            What I Like Building
-        </h2>
+        <div class="projects-intro">
 
-        <div class="focus-card">
+          <h2 class="section-title reveal">
+            THINGS
+            <br>
+            I'VE BUILT.
+          </h2>
+
+          <p class="reveal">
+            A selection of projects, experiments and development work.
+            Replace the placeholder projects below with your actual projects
+            and GitHub repositories.
+          </p>
+
+        </div>
+
+
+        <!-- PROJECT 01 -->
+        <article class="project reveal">
+
+          <div class="project-number">
+            PROJECT — 01
+          </div>
+
+          <div class="project-glow"></div>
+
+          <div class="project-arrow">
+            ↗
+          </div>
+
+          <div class="project-content">
 
             <h3>
-                Full Stack Web Applications
+              YOUR PROJECT
             </h3>
 
             <p>
-                My focus is on developing practical web applications
-                that combine responsive front-end interfaces with
-                Python/Django backends, databases, REST APIs and
-                modern AI/GenAI capabilities.
+              Working on a web application using Django and REST APIs.
             </p>
 
-        </div>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JAVASCRIPT</span>
+            </div>
 
-    </div>
+            <a
+              class="btn"
+              href="https://gw8sgcwjj2-art.github.io/portfoilo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW ON GITHUB →
+            </a>
 
-</section>
+          </div>
+
+        </article>
 
 
-<!-- CONTACT -->
+        <!-- PROJECT 02 -->
+        <article class="project reveal">
 
-<section id="contact">
+          <div class="project-number">
+            PROJECT — 02
+          </div>
 
-    <div class="container contact">
+          <div class="project-glow"></div>
+
+          <div class="project-arrow">
+            ↗
+          </div>
+
+          <div class="project-content">
+
+            <h3>
+              WEB APP
+            </h3>
+
+            <p>
+              Working on a web application using Django and REST APIs.
+            </p>
+
+            <div class="tags">
+              <span class="tag">PYTHON</span>
+              <span class="tag">DJANGO</span>
+              <span class="tag">SQL</span>
+            </div>
+
+            <a
+              class="btn"
+              href="https://gw8sgcwjj2-art.github.io/portfoilo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW ON GITHUB →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 03 -->
+        <article class="project reveal">
+
+          <div class="project-number">
+            PROJECT — 03
+          </div>
+
+          <div class="project-glow"></div>
+
+          <div class="project-arrow">
+            ↗
+          </div>
+
+          <div class="project-content">
+
+            <h3>
+              AI PROJECT
+            </h3>
+
+            <p>
+              Working on integrating AI capabilities into web applications.
+            </p>
+
+            <div class="tags">
+              <span class="tag">PYTHON</span>
+              <span class="tag">AI</span>
+              <span class="tag">GENAI</span>
+            </div>
+
+            <a
+              class="btn"
+              href="https://gw8sgcwjj2-art.github.io/portfoilo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW ON GITHUB →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- JOURNEY -->
+    <section>
+
+      <div class="container">
 
         <div class="section-label">
-            Contact
+          My Journey
         </div>
 
-        <h2 class="section-title">
-            Let's Connect
+        <h2 class="section-title reveal">
+          FROM LEARNING
+          <br>
+          TO BUILDING.
         </h2>
 
-        <p>
-            I'm interested in opportunities where I can apply my
-            development skills, learn continuously and contribute
-            to practical projects.
-        </p>
+        <div class="journey">
 
-        <!-- CHANGE THIS EMAIL -->
-        <a class="email"
-           href="mailto:your.email@example.com">
-            your.email@example.com
-        </a>
 
-        <br>
+          <!-- 01 -->
+          <div class="journey-item reveal">
 
-        <a href="mailto:your.email@example.com"
-           class="btn btn-primary">
-            Send Me an Email
-        </a>
+            <div class="journey-number">
+              01
+            </div>
+
+            <h3>
+              BCA
+            </h3>
+
+            <p>
+              Building a foundation in computer applications,
+              programming and software development.
+            </p>
+
+          </div>
+
+
+          <!-- 02 -->
+          <div class="journey-item reveal">
+
+            <div class="journey-number">
+              02
+            </div>
+
+            <h3>
+              WEB DEVELOPMENT
+            </h3>
+
+            <p>
+              Learning how modern websites are designed,
+              structured and developed for real users.
+            </p>
+
+          </div>
+
+
+          <!-- 03 -->
+          <div class="journey-item reveal">
+
+            <div class="journey-number">
+              03
+            </div>
+
+            <h3>
+              FULL-STACK
+            </h3>
+
+            <p>
+              Connecting frontend interfaces with Python,
+              Django, APIs and databases.
+            </p>
+
+          </div>
+
+
+          <!-- 04 -->
+          <div class="journey-item reveal">
+
+            <div class="journey-number">
+              04
+            </div>
+
+            <h3>
+              AI INTEGRATION
+            </h3>
+
+            <p>
+              Exploring practical ways to integrate AI and
+              Generative AI capabilities into web applications.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CURRENT FOCUS -->
+    <section class="current">
+
+      <div class="container">
+
+        <div class="section-label">
+          Currently Exploring
+        </div>
+
+        <div class="current-word reveal">
+          FULL-STACK
+        </div>
+
+        <div class="current-word reveal">
+          PYTHON
+        </div>
+
+        <div class="current-word reveal">
+          DJANGO
+        </div>
+
+        <div class="current-word reveal">
+          REST APIs
+        </div>
+
+        <div class="current-word reveal">
+          DATABASES
+        </div>
+
+        <div class="current-word reveal">
+          AI + GENAI
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GITHUB -->
+    <section class="github-section">
+
+      <div class="container">
+
+        <div class="github-box reveal">
+
+          <div>
+
+            <h2>
+              CODE.
+              <br>
+              BUILD.
+              <br>
+              EXPLORE.
+            </h2>
+
+            <p>
+              My projects, experiments and development work live on GitHub.
+              Explore the code and follow the journey.
+            </p>
+
+          </div>
+
+          <a
+            class="btn btn-primary"
+            href="https://gw8sgcwjj2-art.github.io/portfoilo/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EXPLORE GITHUB ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="section-label">
+          Contact
+        </div>
+
+        <h2 class="contact-title reveal">
+          LET'S BUILD
+          <br>
+          <span>SOMETHING.</span>
+        </h2>
+
+        <div class="contact-bottom reveal">
+
+          <p>
+            Have an opportunity, project idea, or just want to connect?
+            I'd be happy to hear from you.
+          </p>
+
+          <div class="socials">
+
+            <a
+              class="btn btn-primary"
+              href="mailto:avvishek07@gmail.com"
+            >
+              EMAIL ME →
+            </a>
+
+            <a
+              class="btn"
+              href="https://www.linkedin.com/in/avvishek13"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LINKEDIN ↗
+            </a>
+
+            <a
+              class="btn"
+              href="https://gw8sgcwjj2-art.github.io/portfoilo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GITHUB ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <div class="footer-name">
+          ABHISHEK KUMAR
+        </div>
+
+        <small>
+          FULL-STACK DEVELOPER
+        </small>
+
+      </div>
+
+      <small>
+        © 2026 ABHISHEK KUMAR
+      </small>
+
+      <a href="#" class="btn">
+        BACK TO TOP ↑
+      </a>
 
     </div>
 
-</section>
+  </footer>
 
 
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="container">
-        © <span id="year"></span> Full Stack Developer · BCA Graduate
-    </div>
-
-</footer>
-
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
 
 </body>
 </html>
