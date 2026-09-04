@@ -384,7 +384,7 @@ footer a {
 @media (max-width: 800px) {
 
     section {
-        padding: 60px 6%;
+        padding: 70px 6%;
     }
 
     .nav-links {
@@ -431,11 +431,11 @@ footer a {
         letter-spacing: -5px;
     }
 
-    .hero-image {
+   /* .hero-image {
         width: 100%;
         margin-top: 60px;
     }
-
+*/
     .about-content {
         grid-template-columns: 1fr;
         gap: 45px;
