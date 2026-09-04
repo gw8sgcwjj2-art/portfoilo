@@ -91,7 +91,7 @@ nav.scrolled {
 /* Hero */
 
 .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     padding-top: 100px;
     display: flex;
     align-items: center;
