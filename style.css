@@ -166,7 +166,7 @@ nav.scrolled {
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 50px;
 }
 
 .about-content h2,
@@ -420,7 +420,7 @@ footer a {
 */
     .about-content {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 30px;
     }
 
     .about-content h2,
