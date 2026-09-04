@@ -1,42 +1,47 @@
-/* =========================
-   LOADER
-========================= */
+// =========================
+// PAGE LOADER
+// =========================
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const loader = document.querySelector(".loader");
+window.addEventListener("load", function () {
+  const loader = document.querySelector(".loader");
 
+  setTimeout(function () {
     if (loader) {
       loader.classList.add("hide");
     }
-  }, 1600);
+  }, 1500);
 });
 
 
-/* =========================
-   NAVBAR
-========================= */
+// =========================
+// NAVBAR
+// =========================
 
-const nav = document.querySelector("nav");
+const navbar = document.querySelector("nav");
 
-window.addEventListener("scroll", () => {
-  if (nav) {
-    nav.classList.toggle("scrolled", window.scrollY > 50);
+window.addEventListener("scroll", function () {
+  if (!navbar) return;
+
+  if (window.scrollY > 40) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
   }
 });
 
 
-/* =========================
-   REVEAL ANIMATIONS
-========================= */
+// =========================
+// SCROLL REVEAL
+// =========================
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealItems = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
+const revealObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
       }
     });
   },
@@ -45,70 +50,74 @@ const observer = new IntersectionObserver(
   }
 );
 
-revealElements.forEach((element) => {
-  observer.observe(element);
+revealItems.forEach(function (item) {
+  revealObserver.observe(item);
 });
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+// =========================
+// MOBILE MENU
+// =========================
 
 const menuButton = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".mobile-menu");
 
 if (menuButton && mobileMenu) {
 
-  menuButton.addEventListener("click", () => {
+  menuButton.addEventListener("click", function () {
     mobileMenu.classList.toggle("open");
   });
 
-  document.querySelectorAll(".mobile-menu a").forEach((link) => {
+  const mobileLinks =
+    document.querySelectorAll(".mobile-menu a");
 
-    link.addEventListener("click", () => {
+  mobileLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
       mobileMenu.classList.remove("open");
     });
 
   });
-
 }
 
 
-/* =========================
-   CUSTOM CURSOR
-========================= */
+// =========================
+// CUSTOM CURSOR
+// =========================
 
 const cursor = document.querySelector(".cursor");
 
 if (cursor && window.innerWidth > 800) {
 
-  document.addEventListener("mousemove", (event) => {
+  document.addEventListener("mousemove", function (event) {
 
     cursor.style.left = event.clientX + "px";
     cursor.style.top = event.clientY + "px";
 
   });
 
-  document
-    .querySelectorAll("a, button, .skill, .project")
-    .forEach((element) => {
+  const hoverElements =
+    document.querySelectorAll(
+      "a, button, .skill, .project"
+    );
 
-      element.addEventListener("mouseenter", () => {
-        cursor.classList.add("big");
-      });
+  hoverElements.forEach(function (element) {
 
-      element.addEventListener("mouseleave", () => {
-        cursor.classList.remove("big");
-      });
-
+    element.addEventListener("mouseenter", function () {
+      cursor.classList.add("big");
     });
 
+    element.addEventListener("mouseleave", function () {
+      cursor.classList.remove("big");
+    });
+
+  });
 }
 
 
-/* =========================
-   THREE.JS 3D BACKGROUND
-========================= */
+// =========================
+// THREE.JS BACKGROUND
+// =========================
 
 const canvas = document.getElementById("canvas");
 
@@ -142,9 +151,7 @@ if (canvas && typeof THREE !== "undefined") {
   );
 
 
-  /* =========================
-     CENTRAL 3D OBJECT
-  ========================= */
+  // Main shape
 
   const geometry =
     new THREE.IcosahedronGeometry(1.5, 2);
@@ -157,21 +164,18 @@ if (canvas && typeof THREE !== "undefined") {
       opacity: 0.25
     });
 
-  const sphere =
+  const mainShape =
     new THREE.Mesh(
       geometry,
       material
     );
 
-  sphere.position.x = 1.7;
-  sphere.position.y = 0.1;
+  mainShape.position.set(1.7, 0.1, 0);
 
-  scene.add(sphere);
+  scene.add(mainShape);
 
 
-  /* =========================
-     INNER OBJECT
-  ========================= */
+  // Smaller inner shape
 
   const innerGeometry =
     new THREE.IcosahedronGeometry(0.8, 1);
@@ -184,40 +188,34 @@ if (canvas && typeof THREE !== "undefined") {
       opacity: 0.15
     });
 
-  const innerSphere =
+  const innerShape =
     new THREE.Mesh(
       innerGeometry,
       innerMaterial
     );
 
-  innerSphere.position.copy(
-    sphere.position
+  innerShape.position.copy(
+    mainShape.position
   );
 
-  scene.add(innerSphere);
+  scene.add(innerShape);
 
 
-  /* =========================
-     PARTICLES
-  ========================= */
+  // Particles
 
   const particleGeometry =
     new THREE.BufferGeometry();
 
-  const particleCount = 800;
+  const particleCount = 700;
 
-  const particlePositions =
+  const positions =
     new Float32Array(
       particleCount * 3
     );
 
-  for (
-    let i = 0;
-    i < particleCount * 3;
-    i++
-  ) {
+  for (let i = 0; i < particleCount * 3; i++) {
 
-    particlePositions[i] =
+    positions[i] =
       (Math.random() - 0.5) * 15;
 
   }
@@ -225,7 +223,7 @@ if (canvas && typeof THREE !== "undefined") {
   particleGeometry.setAttribute(
     "position",
     new THREE.BufferAttribute(
-      particlePositions,
+      positions,
       3
     )
   );
@@ -247,85 +245,70 @@ if (canvas && typeof THREE !== "undefined") {
   scene.add(particles);
 
 
-  /* =========================
-     MOUSE MOVEMENT
-  ========================= */
+  // Mouse position
 
   let mouseX = 0;
   let mouseY = 0;
 
   document.addEventListener(
     "mousemove",
-    (event) => {
+    function (event) {
 
       mouseX =
-        (event.clientX /
-          window.innerWidth -
-          0.5) * 2;
+        (event.clientX / window.innerWidth - 0.5) * 2;
 
       mouseY =
-        (event.clientY /
-          window.innerHeight -
-          0.5) * 2;
+        (event.clientY / window.innerHeight - 0.5) * 2;
 
     }
   );
 
 
-  /* =========================
-     ANIMATION
-  ========================= */
+  // Animation
 
   function animate() {
 
     requestAnimationFrame(animate);
 
-    sphere.rotation.x += 0.0018;
-    sphere.rotation.y += 0.003;
+    mainShape.rotation.x += 0.0015;
+    mainShape.rotation.y += 0.003;
 
-    innerSphere.rotation.x -= 0.002;
-    innerSphere.rotation.y -= 0.003;
+    innerShape.rotation.x -= 0.002;
+    innerShape.rotation.y -= 0.003;
 
     particles.rotation.y += 0.0003;
 
 
-    sphere.rotation.x +=
-      (
-        mouseY * 0.25 -
-        sphere.rotation.x
-      ) * 0.015;
+    // Slight mouse movement
 
-    sphere.rotation.y +=
-      (
-        mouseX * 0.25 -
-        sphere.rotation.y
-      ) * 0.015;
+    mainShape.rotation.x +=
+      (mouseY * 0.2 - mainShape.rotation.x) * 0.01;
+
+    mainShape.rotation.y +=
+      (mouseX * 0.2 - mainShape.rotation.y) * 0.01;
 
 
-    innerSphere.rotation.x =
-      sphere.rotation.x;
+    innerShape.rotation.x =
+      mainShape.rotation.x;
 
-    innerSphere.rotation.y =
-      sphere.rotation.y;
+    innerShape.rotation.y =
+      mainShape.rotation.y;
 
 
     renderer.render(
       scene,
       camera
     );
-
   }
 
   animate();
 
 
-  /* =========================
-     RESIZE
-  ========================= */
+  // Resize
 
   window.addEventListener(
     "resize",
-    () => {
+    function () {
 
       camera.aspect =
         window.innerWidth /
@@ -339,102 +322,84 @@ if (canvas && typeof THREE !== "undefined") {
       );
 
       renderer.setPixelRatio(
-        Math.min(
-          window.devicePixelRatio,
-          2
-        )
+        Math.min(window.devicePixelRatio, 2)
       );
+
+    }
+  );
+}
+
+
+// =========================
+// BUTTON EFFECT
+// =========================
+
+if (window.innerWidth > 800) {
+
+  const buttons =
+    document.querySelectorAll(".btn");
+
+  buttons.forEach(function (button) {
+
+    button.addEventListener(
+      "mousemove",
+      function (event) {
+
+        const rect =
+          button.getBoundingClientRect();
+
+        const x =
+          event.clientX -
+          rect.left -
+          rect.width / 2;
+
+        const y =
+          event.clientY -
+          rect.top -
+          rect.height / 2;
+
+        button.style.transform =
+          `translate(${x * 0.12}px, ${y * 0.12}px)`;
+
+      }
+    );
+
+
+    button.addEventListener(
+      "mouseleave",
+      function () {
+
+        button.style.transform =
+          "translate(0, 0)";
+
+      }
+    );
+
+  });
+}
+
+
+// =========================
+// BACK TO TOP
+// =========================
+
+const topButton =
+  document.querySelector('a[href="#"]');
+
+if (topButton) {
+
+  topButton.addEventListener(
+    "click",
+    function (event) {
+
+      event.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
     }
   );
 
 }
-
-
-/* =========================
-   MAGNETIC BUTTON EFFECT
-========================= */
-
-if (window.innerWidth > 800) {
-
-  document
-    .querySelectorAll(".btn")
-    .forEach((button) => {
-
-      button.addEventListener(
-        "mousemove",
-        (event) => {
-
-          const rect =
-            button.getBoundingClientRect();
-
-          const x =
-            event.clientX -
-            rect.left -
-            rect.width / 2;
-
-          const y =
-            event.clientY -
-            rect.top -
-            rect.height / 2;
-
-          button.style.transform =
-            `translate(${x * 0.15}px, ${y * 0.15}px)`;
-
-        }
-      );
-
-
-      button.addEventListener(
-        "mouseleave",
-        () => {
-
-          button.style.transform =
-            "translate(0, 0)";
-
-        }
-      );
-
-    });
-
-}
-
-
-/* =========================
-   PROJECT PARALLAX
-========================= */
-
-const projects =
-  document.querySelectorAll(".project");
-
-window.addEventListener(
-  "scroll",
-  () => {
-
-    if (window.innerWidth <= 800) {
-      return;
-    }
-
-    projects.forEach(
-      (project, index) => {
-
-        const rect =
-          project.getBoundingClientRect();
-
-        const center =
-          window.innerHeight / 2;
-
-        const distance =
-          (rect.top - center) * 0.02;
-
-        project.style.transform =
-          `translateY(${Math.max(
-            0,
-            distance + index * 10
-          )}px)`;
-
-      }
-    );
-
-  }
-);
